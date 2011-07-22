@@ -48,29 +48,30 @@ function problemFour()
         $i[] = $j;
     }
     
-    foreach ($i as $num)
+    while ($k < 1000)
     {
-        while ($k < 999)
+        foreach ($i as $num)
         {
-            //multiply counter and array
             $a = $k * $num;
-            //get string value of the result
-            $n = strval($a);
-            //reverse $n
-            $bward = strrev($n);
-
-            //now compare
-            //if(strcmp($n,$bward) == 0)
-            //{
-                $dromes[] = $a;
-            //}
             
-           $k++;
+            //get stringvalue of counter times $num
+            $n = strval($a);
+            //get its reverse
+            $bward = strrev($n);
+            
+            //compare
+            if(strcmp($n,$bward)==0)
+            {
+                intval($a);
+                //echo $k . ' and ' . 1 . '<br />';
+                $dromes[] = $a;
+            }
         }
-        //$m[] = $num + 1;
+        
+        $k++;
         
     }
-print_r($dromes);
-//echo 'The largest prime number for 600851475143 is <strong>' . $answer_array[$answer_index] . '</strong>.';
+    $answer = max($dromes);
+echo 'The largest palindrome made from the product of two three-digit numbers is <strong>' . $answer . '</strong>.';
 }
 ?>
